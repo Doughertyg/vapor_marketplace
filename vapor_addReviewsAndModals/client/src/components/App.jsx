@@ -10,7 +10,7 @@ const Background = styled.div`
   background: #1b2838;
   color: #acb2b8;
   width: auto;
-  margin: 0 2%;
+  margin: 0;
   max-width: 940px;
 `;
 

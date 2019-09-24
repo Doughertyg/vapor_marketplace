@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "start-all": "(cd ../vapor_recentNews/ && npm run start) & (cd ../vapor_reviews/ && npm run start) & (cd ../vapor_mediaModule/ && npm run start) & (cd ../vapor_addReviewsAndModals/ && npm run start) & (cd ../vapor_navBar_sideBar/ && npm run start) & npm run start",
+    "build-all": "(cd ../vapor_recentNews/ && npm run react-dev) & (cd ../vapor_reviews/ && npm run react-dev) & (cd ../vapor_mediaModule/ && npm run react-dev) & (cd ../vapor_addReviewsAndModals/ && npm run react-dev) & (cd ../vapor_navBar_sideBar/ && npm run react-dev)"
   },
   "repository": {
     "type": "git",

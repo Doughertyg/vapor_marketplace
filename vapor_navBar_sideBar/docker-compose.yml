@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  navbar:
+    container_name: steam_navbar_app
+    build: .
+    depends_on:
+      - "database"
+    ports:
+      - "80:3001"
+    volumes:
+      - ./:/src/app
+
+  database:
+    container_name: steam_navbar_db
+    image: mysql:5.7
+    environment:
+      - MYSQL_DATABASE=steam1
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes

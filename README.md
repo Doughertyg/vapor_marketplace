@@ -1,14 +1,14 @@
-# Steam Store
+# Vapor Marketplace
 
-> Game detail page from the steam store
+> Game detail page for buying and reviewing games
 
 ## Related Projects
 
-  - https://github.com/parks-and-recursion/steam_addReviewsandModals
-  - https://github.com/parks-and-recursion/steam_content
-  - https://github.com/parks-and-recursion/steam_reviews
-  - https://github.com/parks-and-recursion/steam_display
-  - https://github.com/parks-and-recursion/steam_navbar_sidebar
+  - https://github.com/parks-and-recursion/vapor_addReviewsandModals
+  - https://github.com/parks-and-recursion/vapor_content
+  - https://github.com/parks-and-recursion/vapor_reviews
+  - https://github.com/parks-and-recursion/vapor_display
+  - https://github.com/parks-and-recursion/vapor_navbar_sidebar
 
 ## Table of Contents
 
@@ -18,7 +18,12 @@
 
 ## Usage
 
-> Clone to local repo, run npm initialize to initialize my database schema, run npm seed to seed database, run npm start to start server, open browser to localhost:3003... Make sure database -u and -p match in seed script and that database names don't conflict or if using one db that the table names don't.
+> In each component, run npm install to install dependencies, npm run initialize to initialize the database, and npm run seed to seed database.
+> Or if README instructions included in component directory differ, follow those instead
+> Run npm start in each component to start the server(s).
+> Run npm start in the vapor_proxy directory to start the proxy server (no database to initialize here)
+> Navigate to localhost:3000 (proxy server) to see all components together
+> To see only specific components, refer to components README for port and navigate to localhost:port
 
 ## Requirements
 
@@ -28,13 +33,3 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 - etc
 
 ## Development
-
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
-```
-# steam_recentNews

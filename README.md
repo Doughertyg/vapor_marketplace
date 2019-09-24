@@ -22,9 +22,9 @@
 
 - Or if README instructions included in component directory differ, follow those instead
 
-- Run ```npm start``` in each component to start the server(s).
+- Run ```npm run build-all``` from the vapor_proxy directory to build all components at once
 
-- Run ```npm start``` in the vapor_proxy directory to start the proxy server (no database to initialize here)
+- Run ```npm run start-all``` from the vapor_proxy directory to start all component servers at once
 
 - Navigate to localhost:3000 (proxy server) to see all components together
 

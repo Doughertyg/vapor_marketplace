@@ -100,7 +100,6 @@ class ReviewRating extends React.Component {
         }
       },
       success: (helpfulness) => {
-        console.log('PostID ' + this.props.post_id + JSON.stringify(helpfulness));
         this.setState({ helpfulness });
       },
       error: () => console.error('Couldn\'t connect to network.')

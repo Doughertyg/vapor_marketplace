@@ -80,9 +80,6 @@ class Game_box extends React.Component {
     axios
       .get("http://18.219.149.140/game")
       .then(res => {
-        console.log("client get works");
-        console.log("res.data", res.data);
-        console.log("title", res.data.title);
         this.setState({
           title: res.data.title,
           genre: res.data.genre,

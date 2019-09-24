@@ -13,7 +13,6 @@ app.get("/game", (req, res) => {
       console.log("ERROR: ", err);
       res.status(400);
     } else {
-      // console.log("Data received from db: ", data);
       console.log("Server get success!");
       res.status(200);
       res.send(data);
@@ -27,9 +26,5 @@ if (process.env.NODE_ENV !== "test") {
     console.log(`listening on port ${port}`);
   });
 }
-
-// app.get("/nav_bar", (req, res) => {
-//   console.log("server connected");
-// });
 
 module.exports = app;

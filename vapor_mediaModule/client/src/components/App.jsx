@@ -51,7 +51,7 @@ class App extends React.Component {
       gameInfo.head_url = 'https://s3-us-west-1.amazonaws.com/fecsteam/Images/header.jpg';
       this.setState({
         gameInfo
-      }, () => console.log(this.state));
+      });
     });
 
     fetch('/screenshots') 
@@ -62,7 +62,7 @@ class App extends React.Component {
           videos: this.state.media.videos,
           images: screenshots
         }
-      }, () => console.log(this.state));
+      });
     });
 
     fetch('/videos')
@@ -73,7 +73,7 @@ class App extends React.Component {
           videos,
           images:this.state.media.images
         }
-      }, () => console.log(this.state));
+      });
     });
   }
   render() {

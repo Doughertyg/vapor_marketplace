@@ -54,7 +54,6 @@ class LanguageDropDown extends React.Component {
 
   handleClickOutside() {
     this.toggle();
-    console.log('clicked outside');
   }
 
   toggle() {

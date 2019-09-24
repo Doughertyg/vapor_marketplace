@@ -1,2 +1,2 @@
-Content module of a steam game page.
+Content module of a Vapor game page.
 

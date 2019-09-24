@@ -9,6 +9,7 @@ const Overflow = styled.div`
   margin-right: 16px;
   position: relative;
 `;
+
 class Gallery extends React.Component {
   constructor(props) {
     super(props);

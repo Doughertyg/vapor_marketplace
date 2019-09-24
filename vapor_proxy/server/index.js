@@ -7,7 +7,7 @@ app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
-/*port 3001*/ ///Jimmy's api's
+/*port 3001*/ ///Side bar and nav bar api
 app.get('/game', (req, res) => {
   request("http://localhost:3002/game", (err, response, body) => {
     if(err) {
@@ -20,7 +20,7 @@ app.get('/game', (req, res) => {
   });
 });
 
-/*port 3002*/ ///xin's api's
+/*port 3002*/ ///media component api
 app.get('/games/:uid', (req, res) => {
   request("http://localhost:3002/games/"+ req.params.uid, (err, response, body) => {
     if(err) {
@@ -57,7 +57,7 @@ app.get('/videos', (req, res) => {
   });
 });
 
-// ERIC'S APIS
+/* port 3005 */ /// reviews component APIS
 app.get('/reviews', (req, res) => {
   console.log('TRYING TO GET REVIEWS');
   let options = {
@@ -160,7 +160,7 @@ app.get('/graphRecent', (req, res) => {
   });
 })
 
-//////////Graham's api's port 3003
+/* port 3003 */ ///Recent News component
 app.get('/updates', (req, res) => {
   let options = {
     url: 'http://localhost:3003/updates'

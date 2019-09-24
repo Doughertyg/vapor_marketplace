@@ -1,6 +1,6 @@
 # Project Name
 
-This project is a clone of the Steam game page, which includes
+This project is a clone of the vapor game page, which includes
 - Navbar/sidebar
 - Game media gallery
 - Purchase/update information
@@ -9,11 +9,11 @@ This project is a clone of the Steam game page, which includes
 
 ## Related Projects
 
-  - Eric: https://github.com/parks-and-recursion/steam_reviews
-  - Joyce: https://github.com/parks-and-recursion/steam_addReviewsandModals
-  - Jimmy: https://github.com/parks-and-recursion/steam_navbar_sidebar
-  - Xin: https://github.com/parks-and-recursion/steam_content
-  - Graham: https://github.com/parks-and-recursion/steam_recentNews
+  - Eric: https://github.com/parks-and-recursion/vapor_reviews
+  - Joyce: https://github.com/parks-and-recursion/vapor_addReviewsandModals
+  - Jimmy: https://github.com/parks-and-recursion/vapor_navbar_sidebar
+  - Xin: https://github.com/parks-and-recursion/vapor_content
+  - Graham: https://github.com/parks-and-recursion/vapor_recentNews
 
 ## Table of Contents
 
@@ -77,7 +77,7 @@ module.exports = {
 #### package.json
 ```json
 {
-  "name": "steam_clone",
+  "name": "vapor_clone",
   "version": "",
   "description": "",
   "author": "",

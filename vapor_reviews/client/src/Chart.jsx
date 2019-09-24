@@ -36,7 +36,7 @@ class Chart extends React.Component {
       success: recentData => {
         this.setState({ recentData });
       },
-      error: () => console.error('Couldn\t pull graph data')
+      error: () => console.error('Couldn\'t pull graph data')
     });
   }
 

@@ -116,16 +116,4 @@ db.Review.sync({ force: true, logging: false })
   })
   .catch(e => console.error(e));
 
-// db.Comment.sync({ force: true, logging: false }).then(() => {
-//   console.log('Comment table dropped and synced');
-//   db.Comment.bulkCreate(comments)
-//     .then(() => {
-//       console.log('Comments have been inserted');
-//       return db.Comment.findAll();
-//     })
-//     .then(comments => {
-//       console.log(comments);
-//     });
-// });
-
   

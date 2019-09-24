@@ -9,7 +9,7 @@ app.get('/games/:uid', (req, res) => {
   var uid = req.params.uid;
   db.findGamebyId(uid, (err, game) => {
     if(err) {
-      console.log(err);
+      console.error(err);
       res.status(404);
     } else {
       res.status(200);

@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   width: 324px;
   float: right;
 `;
+
 class Description extends React.Component {
   constructor(props) {
     super(props);

@@ -16,10 +16,6 @@ app.listen(port, () => {
   console.log(`Listening on ${port}`);
 });
 
-app.get('/test', (req, res) => {
-  console.log('Working');
-});
-
 app.get('/reviews', (req, res) => {
   const orderMap = {
     helpful: 'helpful_yes_count',
@@ -28,7 +24,6 @@ app.get('/reviews', (req, res) => {
   };
   const where = req.body.where || req.query.where;
   const order = req.body.order || req.query.order;
-  console.log(where, order);
   const options = {
     where: where,
     order: [[orderMap[order], 'DESC']]
@@ -64,7 +59,6 @@ app.get('/recent', (req, res) => {
 app.post('/review/vote', (req, res) => {
   var postId = req.body.post_id;
   var helpfulness = req.body.helpfulness;
-  console.log(postId, helpfulness);
   res.send('success');
 });
 
@@ -300,7 +294,6 @@ app.get('/reviews/comments', (req, res) => {
 
 app.post('/reviews/comment', (req, res) => {
   const options = req.body.comment_id ? req.body : req.body.data;
-  console.log(options);
   options['comment_date'] = moment(options['comment_date']).format();
   db.createComment(options, (err, data) => {
     if (err) { return console.error(err); }

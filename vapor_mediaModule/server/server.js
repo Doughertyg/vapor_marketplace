@@ -19,8 +19,18 @@ app.get('/games/:uid', (req, res) => {
 });
 
 app.get('/screenshots', (req, res) => {
-  res.status(200);
-  res.send(help.screenshotsUrls());
+  db.findScreenshots((err, screenshots) => {
+    if (err) {
+      console.error(err);
+      res.status(500);
+    } else {
+
+      res.status(200);
+      res.send(screenshots);
+    }
+  })
+  // res.status(200);
+  // res.send(help.screenshotsUrls());
 });
 
 app.get('/videos', (req, res) => {

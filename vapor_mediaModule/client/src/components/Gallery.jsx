@@ -30,19 +30,19 @@ class Gallery extends React.Component {
   }
   
   handleItemClick(index) {
-    if (index === 0) {
+    if (index === 0) { // on first image, starting position
       this.setState({
         sliderPos: 0,
         stripPos: 0
       })
-    } else if(index === 12){
+    } else if(index === 12){ //on last image, finishing position
       this.setState({
         sliderPos: 462,
         stripPos: -960
       })
     } else {
-      if (index*120 + this.state.stripPos > 480) {
-        var stripPos = (this.state.stripPos - 600) < -960 ? -960 : this.state.stripPos - 600;
+      if (index*120 + this.state.stripPos > 480) { // if more than half way, 120 is width of image
+        var stripPos = (this.state.stripPos - 600) < -960 ? -960 : this.state.stripPos - 600; // 
         this.setState({
           stripPos,
           sliderPos: stripPos * (-462/960)
@@ -61,7 +61,7 @@ class Gallery extends React.Component {
     });
     if(index > 1 && index < 12) {
       this.setState({
-        url: this.props.media.images[index - 2],
+        url: this.props.media.images[index - 2], // displaying an image from state at index - 2
         isVideo: false
       })
     } else {
@@ -69,7 +69,7 @@ class Gallery extends React.Component {
         index = 2;
       }
       this.setState({
-        url: this.props.media.videos[index].video,
+        url: this.props.media.videos[index].video, // displaying a video (first two media spots)
         isVideo: true
       })
     }
@@ -81,7 +81,7 @@ class Gallery extends React.Component {
     })
   }
   handleLeftArrowClick() {
-    if(this.state.selectorPos === 0) {
+    if(this.state.selectorPos === 0) { // if on first image, go to last
       this.handleItemClick(12);
     } else {
       this.handleItemClick((this.state.selectorPos/120 - 1));
@@ -89,7 +89,7 @@ class Gallery extends React.Component {
   }
 
   handleRightArrowClick() {
-    if(this.state.selectorPos === 1440) {
+    if(this.state.selectorPos === 1440) { // if on last image, go back to first
       this.handleItemClick(0);
     } else {
       this.handleItemClick((this.state.selectorPos/120 + 1));

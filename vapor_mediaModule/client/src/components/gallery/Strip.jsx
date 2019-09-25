@@ -67,8 +67,8 @@ class Strip extends React.Component {
       <Screenshot onClick={() => this.props.onClick(1)}><Img src={this.props.videos[1].thumbnail}/><MovieMaker/></Screenshot>;
       lastVideo = 
         <Screenshot onClick={() => this.props.onClick(12)}><Img src={this.props.videos[2].thumbnail}/><MovieMaker/></Screenshot>
-
     }
+
     return(
       <Wrapper>
         <StripScroll stripPos={stripPos} >

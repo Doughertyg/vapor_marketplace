@@ -62,11 +62,11 @@ class Strip extends React.Component {
     var lastVideo = null;
     if(this.props.videos) {
       firstVideo = 
-        <Screenshot onClick={() => this.props.onClick(0)}><Img src={this.props.videos[0].thumbnail}/><MovieMaker/></Screenshot>;
+        <Screenshot onClick={() => this.props.onClick(0)}><Img src={this.props.screenshots[0]}/><MovieMaker/></Screenshot>;
       secondVideo =
-      <Screenshot onClick={() => this.props.onClick(1)}><Img src={this.props.videos[1].thumbnail}/><MovieMaker/></Screenshot>;
+      <Screenshot onClick={() => this.props.onClick(1)}><Img src={this.props.screenshots[1]}/><MovieMaker/></Screenshot>;
       lastVideo = 
-        <Screenshot onClick={() => this.props.onClick(12)}><Img src={this.props.videos[2].thumbnail}/><MovieMaker/></Screenshot>
+        <Screenshot onClick={() => this.props.onClick(12)}><Img src={this.props.screenshots[2]}/><MovieMaker/></Screenshot>
     }
 
     return(
@@ -76,8 +76,8 @@ class Strip extends React.Component {
           {firstVideo}
           {secondVideo}
           { 
-            this.props.screenshots.map((url, index) => {
-              return <Screenshot key={index} onClick={() => this.props.onClick(index + 2)}><Img src={url}/></Screenshot>
+            this.props.screenshots.map((image, index) => {
+              return <Screenshot key={index} onClick={() => this.props.onClick(index + 2)}><Img src={image.url}/></Screenshot>
             })
           }
           {lastVideo}

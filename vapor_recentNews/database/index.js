@@ -9,16 +9,16 @@ const sequelize = new Sequelize('steam_updates', 'root', null, {
 		min: 0,
 		acquire: 30000,
 		idle: 10000
-	}
+	},
+	logging: false
 });
 
 sequelize
 	.authenticate()
 	.then(() => {
-		console.log('connection successful yayy');
 	})
 	.catch((err) => {
-		console.log('error connecting to database LOLL', err);
+		console.log('error connecting to database', err);
 	})
 
 const Updates = sequelize.define('updates', { //defining our updates model
@@ -120,18 +120,16 @@ const Comments = sequelize.define('comments', {
 
 sequelize.sync({ force: false, logging: false }) // pass force option in? to auto create table
 .then(() => {
-	console.log('all synced');
+	console.log('synced');
 })
 .catch(() => {
 	console.log('[db.index.js:126] sync failed');
 })
 
 const getUpdates = (cb) => {
-	console.log('performing get on db!!');
 
 	Updates.findAll()
 	.then((data) => {
-		console.log('[database/index.jsx:134] updates successfuly fetched');
 		cb(null, data);
 	})
 	.catch((err) => {
@@ -141,7 +139,6 @@ const getUpdates = (cb) => {
 }
 
 const getGame = (id, cb) => {
-	console.log('performing get on db!!');
 
 	Games.findAll({
 		where: {
@@ -149,7 +146,7 @@ const getGame = (id, cb) => {
 		}
 	})
 	.then((data) => {
-		console.log('[db/index.jsx: 152] game fetched using id!');
+		console.log('[db/index.jsx: 152] game fetched using id');
 		cb(null, data);
 	})
 	.catch((err) => {

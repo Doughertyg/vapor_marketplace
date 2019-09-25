@@ -16,15 +16,12 @@ app.get("/game", (req, res) => {
       console.log("Server get success!");
       res.status(200);
       res.send(data);
-      res.end();
     }
   });
 });
 
-if (process.env.NODE_ENV !== "test") {
-  app.listen(port, () => {
-    console.log(`listening on port ${port}`);
-  });
-}
+app.listen(port, () => {
+  console.log(`listening on port ${port}`);
+});
 
 module.exports = app;

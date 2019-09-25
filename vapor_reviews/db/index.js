@@ -2,7 +2,8 @@
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('steam_reviews', 'root', null, {
   host: 'localhost',
-  dialect: 'mysql'
+  dialect: 'mysql',
+  logging: false
 });
 const Review = require('./models/review.js')(sequelize);
 const Comment = require('./models/comment.js')(sequelize);
@@ -54,12 +55,12 @@ const createComment = (options, callback) => {
     .catch(e => callback(e));
 };
 
-Review.sync({ force: false, logging: true })
+Review.sync({ force: false, logging: false })
   .then(() => {
     console.log('Review table synced');
   }).
   then(() => {
-    return Comment.sync({ force: false, logging: true });
+    return Comment.sync({ force: false, logging: false });
   })
   .then(() => {
     //Comment.hasOne(Review);

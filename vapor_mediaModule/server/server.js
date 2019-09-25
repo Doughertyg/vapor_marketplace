@@ -29,26 +29,11 @@ app.get('/screenshots', (req, res) => {
       res.send(screenshots);
     }
   })
-  // res.status(200);
-  // res.send(help.screenshotsUrls());
 });
 
 app.get('/videos', (req, res) => {
-  //YouTube API works but if I want to request the video url from my localhost, I get a cross origin reading block
-  //So I changed to put my videos on AWS S3
-  // help.searchYouTube({
-  //   key: env.YOUTUBE_API_KEY,
-  //   query: 'Total War'
-  // },(err, data) => {
-  //   if(err) {
-  //     console.log(err)
-  //     res.status(404);
-  //     res.send(err);
-  //   } else {
-  //     res.status(200);
-  //     res.send(data);
-  //   }
-  // })
+  // send back video info from helper file (hardcoded)
+  // this data should be on the database either on a separate videos table or on the games table
   res.status(200);
   res.send(help.getVideosFromAws());
 });

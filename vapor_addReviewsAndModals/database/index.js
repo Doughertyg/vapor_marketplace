@@ -64,7 +64,7 @@ var postReview = review => {
     if (err) {
       console.log(err);
     } else {
-      console.log('DB posted:', player);
+      console.log('DB posted:');
     }
   });
 };

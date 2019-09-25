@@ -19,13 +19,12 @@ App.get('/updates', (req, res) => {
 			return;
 		}
 
+		res.status(200);
 		res.send(data);
 	})
 })
 
 App.get('/games_updates/:id', (req, res) => {
-	console.log('get to server for games received!');
-	console.log('req params!', req.params);
 
 	db.getGame(req.params.id, (err, data) => {
 		if (err) {
@@ -33,7 +32,7 @@ App.get('/games_updates/:id', (req, res) => {
 			return;
 		}
 
-		console.log('data received from db! chyaaa', data);
+		res.status(200);
 		res.send(data);
 	})
 })

@@ -36,7 +36,6 @@ app.get('/reviews', (req, res) => {
 });
 
 app.get('/recent', (req, res) => {
-  console.log('PULLING RECENT');
   const date = req.query.date || moment().startOf('day').format();
   const where = req.query.where || {};
   // eslint-disable-next-line camelcase
@@ -279,7 +278,6 @@ app.get('/reviews/filters', (req, res) => {
 });
 
 app.get('/reviews/comments', (req, res) => {
-  //const options = req.query.where || {limit: 10};
   let where = req.query.where || {};
   let options = {
     where: where,

@@ -48,7 +48,7 @@ class App extends React.Component {
     fetch('/games/1')
     .then(response => response.json())
     .then(gameInfo => {
-      gameInfo.head_url = 'https://s3-us-west-1.amazonaws.com/fecsteam/Images/header.jpg';
+      gameInfo.head_url = 'https://steamcdn-a.akamaihd.net/steam/apps/570/header.jpg?t=1568136439';
       this.setState({
         gameInfo
       });

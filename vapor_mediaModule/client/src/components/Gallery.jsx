@@ -14,7 +14,7 @@ class Gallery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      url : props.media.images[0],
+      url : props.media.images[0].url,
       isVideo: false,
       sliderPos: 0,
       stripPos: 0,
@@ -61,7 +61,7 @@ class Gallery extends React.Component {
     });
     if(index > 1 && index < 12) {
       this.setState({
-        url: this.props.media.images[index - 2], // displaying an image from state at index - 2
+        url: this.props.media.images[index - 2].url, // displaying an image from state at index - 2
         isVideo: false
       })
     } else {
@@ -69,7 +69,7 @@ class Gallery extends React.Component {
         index = 2;
       }
       this.setState({
-        url: this.props.media.videos[index].video, // displaying a video (first two media spots)
+        url: this.props.media.images[index].url, // displaying a video (first two media spots)
         isVideo: true
       })
     }
@@ -101,7 +101,7 @@ class Gallery extends React.Component {
       <Overflow>
         <Highlight url={this.state.url} isVideo={this.state.isVideo} />
         <Strip 
-              videos={this.props.media.videos}
+              videos={this.props.media.images}
               screenshots={this.props.media.images} 
               onClick={this.handleItemClick} 
               stripPos={this.state.stripPos}

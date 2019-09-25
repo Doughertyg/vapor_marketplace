@@ -59,7 +59,6 @@ app.get('/videos', (req, res) => {
 
 /* port 3005 */ /// reviews component APIS
 app.get('/reviews', (req, res) => {
-  console.log('TRYING TO GET REVIEWS');
   let options = {
     url: 'http://localhost:3005/reviews',
     json: true,
@@ -67,14 +66,19 @@ app.get('/reviews', (req, res) => {
   };
 
   request(options, function(error, response, body) {
-    if (error) { console.error('Could not get reviews data', error); }
-    console.log('Type of reviews object is ' + typeof body);
+    if (error) { 
+      console.error('Could not get reviews data', error); 
+      res.status(500);
+      res.end();
+    }
+
+    res.status(200);
     res.send(body);
   });
 });
 
 app.get('/recent', (req, res) => {
-  console.log('TRYING TO GET RECENT');
+  console.log('retrieving recent');
   let options = {
     url: 'http://localhost:3005/recent',
     json: true,
@@ -82,8 +86,13 @@ app.get('/recent', (req, res) => {
   };
   
   request(options, function(error, response, body) {
-    if (error) { console.error('Could not get reviews data', error); }
-    console.log('Type of reviews object is ' + typeof body);
+    if (error) { 
+      console.error('Could not get reviews data', error); 
+      res.status(500);
+      res.end();
+    }
+
+    res.status(200);
     res.send(body);
   });
 });
@@ -102,21 +111,32 @@ app.post('/review/vote', (req, res) => {
   };
 
   request(options , function(error, response, body) {
-    if (error) { console.error('Could not get reviews data', error); }
-    console.log('Type of reviews object is ' + typeof body);
+    if (error) { 
+      console.error('Could not post reviews data', error); 
+      res.status(500);
+      res.end();
+    }
+
+    res.status(200);
     res.send(body);
   });
 });
 
 app.get('/reviews/filters', (req, res) => {
   request('http://localhost:3005/reviews/filters', function(error, response, body) {
-    if (error) { console.error('Could not get languages', error); }
+    if (error) { 
+      console.error('Could not get languages', error); 
+      res.status(500);
+      res.end();
+    }
+
+    res.status(200);
     res.send(JSON.parse(body));
   });
 });
 
 app.get('/reviews/comments', (req, res) => {
-  console.log('TRYING TO GET COMMENTS');
+  console.log('retrieving comments');
   let options = {
     url: 'http://localhost:3005/reviews/comments',
     json: true,
@@ -124,8 +144,13 @@ app.get('/reviews/comments', (req, res) => {
   };
 
   request(options, function(error, response, body) {
-    if (error) { console.error('Could not get reviews data', error); }
-    console.log('Type of reviews object is ' + typeof body);
+    if (error) { 
+      console.error('Could not get reviews data', error);
+      res.status(500);
+      res.end(); 
+    }
+
+    res.status(200);
     res.send(body);
   });
 });
@@ -139,8 +164,13 @@ app.post('/reviews/comment', (req, res) => {
   };
 
   request(options , function(error, response, body) {
-    if (error) { console.error('Could not get reviews data', error); }
-    console.log('Type of reviews object is ' + typeof body);
+    if (error) { 
+      console.error('Could not get reviews data', error); 
+      res.status(500);
+      res.end();
+    }
+
+    res.status(200);
     res.send(body);
   });
 });
@@ -153,7 +183,6 @@ app.get('/graphOverall', (req, res) => {
 })
 
 app.get('/graphRecent', (req, res) => {
-  console.log('ROUTE TO ERIC');
   request('http://localhost:3005/graphRecent', function(error, response, body) {
     if (error) { console.error('Could not get graph data', error); }
     res.send(JSON.parse(body));

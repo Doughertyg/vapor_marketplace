@@ -15,6 +15,3 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-      - run: # run tests
-          name: Run Test
-          command: npm test 

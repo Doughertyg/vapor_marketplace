@@ -15,7 +15,7 @@
     "supertest": "NODE_ENV=test mocha test/test.js --forceExit"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-core": "6.24.1",
     "babel-plugin-react": "1.0.0",
     "babel-preset-react": "6.24.1",
